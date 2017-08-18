@@ -1,9 +1,15 @@
-@import "variables/variables";
-@import "blocks/footer";
+@import (less) "normalize.css";
+@import (less) "../../node_modules/animate.css/animate.css";
+@import "variables";
+@import "base";
+@import "mixins";
 
-body {
-  background-color: @primary;
-  color: @color;
-  display: flex;
-  flex-direction: column;
-}
+@import "modules/header";
+@import "modules/navigation";
+@import "modules/footer";
+@import "modules/section";
+
+@import "sections/history";
+@import "sections/products";
+@import "sections/guarantee";
+@import "sections/people";

@@ -1,0 +1,18 @@
+@import: "variables";
+
+body {
+  background-color: @primary;
+  color: @secondary;
+}
+
+
+.item {
+  background-color: red;
+  width: 100px;
+  // height: 100px;
+  height: ~"calc(100px * 2)";
+  animation-duration: 1s;
+  display: block;
+  .rounded(40px);
+}
+
