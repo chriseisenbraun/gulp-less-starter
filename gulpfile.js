@@ -13,10 +13,7 @@ var newer = require('gulp-newer');
 gulp.task('less', function(){
  return gulp.src('source/less/styles.less')
   .pipe(sourcemaps.init())
-  .pipe(less().on('error', util.log))
-  .pipe(less({
-    paths: [ path.join(__dirname, 'less', 'includes') ]
-  }))
+  .pipe(less({paths: [ path.join(__dirname, 'source', 'modules')]}).on('error', util.log))
   .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
@@ -26,6 +23,7 @@ gulp.task('less', function(){
   .pipe(browserSync.stream());
 //
 });
+
 
 // Static Server + watching less/html files
 // https://browsersync.io/docs/gulp
