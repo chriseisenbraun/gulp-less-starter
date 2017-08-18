@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var sourcemaps = require('gulp-sourcemaps');
+var util = require('gulp-util');
 var browserSync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
 var path = require('path');
@@ -12,6 +13,7 @@ var newer = require('gulp-newer');
 gulp.task('less', function(){
  return gulp.src('source/less/styles.less')
   .pipe(sourcemaps.init())
+  .pipe(less().on('error', util.log))
   .pipe(less({
     paths: [ path.join(__dirname, 'less', 'includes') ]
   }))
@@ -22,7 +24,7 @@ gulp.task('less', function(){
   .pipe(sourcemaps.write('sourcemaps'))
   .pipe(gulp.dest('public/css/'))
   .pipe(browserSync.stream());
-
+//
 });
 
 // Static Server + watching less/html files
