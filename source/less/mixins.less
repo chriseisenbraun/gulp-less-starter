@@ -2,8 +2,21 @@
   border-radius: @rounded
 }
 
-.shaker(@animate-name) {
-  animation-duration: 2s;
-  animation-delay: .1s;
-  animation-name: @animate-name;
+.animated-timing(@duration; @delay) {
+  animation-duration: @duration;
+  animation-delay: @delay;
 }
+
+.gradient-test {
+  background-image:
+    linear-gradient(
+      to right,
+      lighten(@font-bg-color, 10%),
+      lighten(@font-bg-color, 10%) 15%,
+      @footer-primary 15%,
+      @footer-primary 75%,
+      // @font-bg-color 75%
+    );
+}
+
+@gradient: background-image(linear-gradient(to bottom, #fb83fa 0%,#e93cec 100%));

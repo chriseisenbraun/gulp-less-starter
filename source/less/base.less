@@ -7,12 +7,13 @@ body {
 
 
 .item {
-  background-color: red;
+  background-color: contrast(@primary);
   width: 100px;
   // height: 100px;
   height: ~"calc(100px * 2)";
-  animation-duration: 1s;
+  .animated-timing(2s, .5s);
+  // animation-duration: 2s;
   display: block;
-  .rounded(40px);
+  .rounded(50px);
 }
 
